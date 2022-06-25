@@ -42,6 +42,7 @@ class MotifController {
         return res.status(200).json({ success: true, dtMotif });
     })
             }catch(error){
+                console.log(error);
                 return res.status(505).json({ success: false, error: error });
             }
             
