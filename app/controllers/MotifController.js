@@ -21,8 +21,11 @@ class MotifController {
                 if (!validation.success) return res.status(400).json(validation);
 
       const imagePath = path.join(__dirname, "../../public/image");
+      console.log(1);
       const fileUpload = new resize(imagePath);
+      console.log(2);
       let foto = await fileUpload.save(req.file.buffer, req.file.originalname);
+      console.log(3);
       
       axios.post(`https://api.imgbb.com/1/upload?key=4c40d02b3fab3d334e1c22deb47fbd91&image=https://nevsbe.herokuapp.com/image/${foto}`)
       .then(async function (response) {
