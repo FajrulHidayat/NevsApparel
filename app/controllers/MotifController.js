@@ -2,6 +2,8 @@ const {Motif} = require("../models")
 const multer = require("multer");
 const upload = multer().single("foto");
 const axios = require("axios")
+const path = require("path");
+const resize = require("../services/resize.service");
 
 class MotifController {
     async uploadImage(req,res){
