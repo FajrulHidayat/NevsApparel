@@ -25,6 +25,7 @@ class Resize {
     return fileName;
   }
   filepath(filename) {
+    console.log(`${this.folder}/${filename}`);
     return path.resolve(`${this.folder}/${filename}`)
   }
 }
