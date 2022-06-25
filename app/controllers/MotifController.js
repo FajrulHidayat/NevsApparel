@@ -41,6 +41,10 @@ class MotifController {
           idDesign: req.body.idDesign,
           urlDesign: imgbbResp,
           
+        }).catch((err)=>{
+          console.log(err);
+          message=err
+          return res.status(505).json({ success: true, error:err });
         });
         console.log(imgbbResp);
         console.log(motif);
