@@ -41,16 +41,16 @@ class MotifController {
           idDesign: req.body.idDesign,
           urlDesign: imgbbResp,
           
-        }).catch((err)=>{
-          console.log(err);
-          message=err
-          return res.status(505).json({ success: true, error:err });
-        });
+        }).
         console.log(imgbbResp);
         console.log(motif);
         const dtMotif = await motif.save();
         return res.status(200).json({ success: true, dtMotif });
-    })
+    }).catch((err)=>{
+      console.log(err);
+      message=err
+      return res.status(505).json({ success: true, error:err });
+    });
             }catch(error){
                 console.log(error);
                 return res.status(505).json({ success: false, error: error });
