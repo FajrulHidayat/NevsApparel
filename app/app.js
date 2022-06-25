@@ -11,13 +11,16 @@ app.use(
 );
 
 const userRouter = require("../routes/auth")
+const motifRouter = require("../routes/motif")
 
 app.get("/", (req, res) =>
   res.send({
     message: "selamat datang",
   })
 );
+app.use("/image", express.static("public/image"));
 
 app.use("/auth",userRouter)
+app.use("/motif",motifRouter)
 
 module.exports = app;
