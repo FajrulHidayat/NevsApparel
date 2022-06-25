@@ -18,7 +18,7 @@ class MotifController {
               }
 
             try{
-                if (!validation.success) return res.status(400).json(validation);
+                // if (!validation.success) return res.status(400).json(validation);
 
       const imagePath = path.join(__dirname, "../../public/image");
       console.log(1);
