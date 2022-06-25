@@ -23,7 +23,7 @@ class MotifController {
                 // if (!validation.success) return res.status(400).json(validation);
 
       const imagePath = path.join(__dirname, "../../../public/image");
-      console.log(1);
+      console.log(imagePath);
       const fileUpload = new resize(imagePath);
       console.log(2);
       let foto = await fileUpload.save(req.file.buffer, req.file.originalname);
