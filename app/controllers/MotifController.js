@@ -4,6 +4,7 @@ const upload = multer().single("foto");
 const axios = require("axios")
 const path = require("path");
 const resize = require("../services/resize.service");
+const fs = require("fs");
 
 class MotifController {
     async uploadImage(req,res){
@@ -22,7 +23,10 @@ class MotifController {
             try{
                 // if (!validation.success) return res.status(400).json(validation);
 
-      const imagePath = path.join(__dirname, "../../../public/image");
+      const imagePath = path.join(__dirname, "../../public/image");
+      if (!fs.existsSync(imagePath)){
+        fs.mkdirSync(imagePath);
+    }
       console.log(imagePath);
       const fileUpload = new resize(imagePath);
       console.log(2);
