@@ -18,6 +18,16 @@ app.get("/", (req, res) =>
     message: "selamat datang",
   })
 );
+app.get("/speach", (req, res) =>{
+  let msg = new SpeechSynthesisUtterance();
+  msg.text = "Hello, Anbies Here!";
+  window.speechSynthesis.speak(msg);
+    res.send({
+      message: "selamat datang",
+      
+    })
+  }
+);
 app.use("/image", express.static("public/image"));
 
 app.use("/auth",userRouter)
