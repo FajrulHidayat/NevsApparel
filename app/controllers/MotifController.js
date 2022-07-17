@@ -89,6 +89,21 @@ class MotifController {
     }
     return res.status(status).json({ message: message, dtMotif });
   }
+  async getAllMotifbyMotif(req, res) {
+    let status;
+    let message;
+    // let idDesign = req.params.idDesign;
+    let dtMotif = await Motif.find({ idDesign: /11$/ });
+
+    if (dtMotif) {
+      status = 200;
+      message = "Get Motif Success";
+    } else {
+      status = 404;
+      message = "Motif not found";
+    }
+    return res.status(status).json({ message: message, dtMotif });
+  }
 }
 
 const motifController = new MotifController();
