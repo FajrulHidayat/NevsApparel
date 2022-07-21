@@ -6,5 +6,6 @@ router.post("/", motif.uploadImage);
 router.get("/all", motif.getAllMotif);
 router.get("/allByMotif", motif.getAllMotifbyMotif);
 router.get("/findByIdDesign/:idDesign", motif.getMotifbyidDesign);
+router.delete("/", motif.DeleteAllMotif);
 
 module.exports = router;

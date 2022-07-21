@@ -10,27 +10,27 @@ app.use(
   })
 );
 
-const userRouter = require("../routes/auth")
-const motifRouter = require("../routes/motif")
+const userRouter = require("../routes/auth");
+const motifRouter = require("../routes/motif");
+const orderRouter = require("../routes/order");
 
 app.get("/", (req, res) =>
   res.send({
     message: "selamat datang",
   })
 );
-app.get("/speach", (req, res) =>{
+app.get("/speach", (req, res) => {
   let msg = new SpeechSynthesisUtterance();
   msg.text = "Hello, Anbies Here!";
   window.speechSynthesis.speak(msg);
-    res.send({
-      message: "selamat datang",
-      
-    })
-  }
-);
+  res.send({
+    message: "selamat datang",
+  });
+});
 app.use("/image", express.static("public/image"));
 
-app.use("/auth",userRouter)
-app.use("/motif",motifRouter)
+app.use("/auth", userRouter);
+app.use("/motif", motifRouter);
+app.use("/order", orderRouter);
 
 module.exports = app;

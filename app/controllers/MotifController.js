@@ -104,6 +104,21 @@ class MotifController {
     }
     return res.status(status).json({ message: message, dtMotif });
   }
+  async DeleteAllMotif(req, res) {
+    let status;
+    let message;
+    // let idDesign = req.params.idDesign;
+    let dtMotif = await Motif.deleteMany();
+
+    if (dtMotif) {
+      status = 200;
+      message = "Delete All Motif Success";
+    } else {
+      status = 404;
+      message = "Delete All Motif Failed";
+    }
+    return res.status(status).json({ message: message, dtMotif });
+  }
 }
 
 const motifController = new MotifController();
