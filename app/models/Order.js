@@ -5,38 +5,37 @@ const OrderSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  orderName:{
-    type:String,
-  },
-  orderPhone:{
-    type:String,
-  },
-  pickUpDate:{
-    type:String,
-  },
-  collar: {
+  orderName: {
     type: String,
-    required: true,
   },
-  sleeve: {
+  orderPhone: {
     type: String,
-    required: true,
   },
-  font:{
-    type:String,
+  pickUpDate: {
+    type: String,
   },
-  cloth:{
-    type:String,
+  fontPlayerName: {
+    type: String,
   },
-  motive:{
-    type:String,
+  fontBackNumber: {
+    type: String,
   },
-  players:[{
-    name:String,
-    backNumber:String,
-    size:String
-  }]
-  
+  cloth: {
+    type: String,
+  },
+  motive: {
+    type: String,
+  },
+  players: [
+    {
+      name: String,
+      backNumber: String,
+      size: String,
+    },
+  ],
+  sample: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

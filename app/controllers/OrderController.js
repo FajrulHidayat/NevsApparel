@@ -1,6 +1,6 @@
 const { Order } = require("../models");
 const multer = require("multer");
-const upload = multer().single("foto");
+const upload = multer().single("image");
 const axios = require("axios");
 const path = require("path");
 const resize = require("../services/resize.service");
@@ -43,9 +43,8 @@ class OrderController {
               orderName: req.body.orderName,
               orderPhone: req.body.orderPhone,
               pickUpDate: req.body.pickUpDate,
-              collar: req.body.collar,
-              sleeve: req.body.sleeve,
-              font: req.body.font,
+              fontPlayerName: req.body.fontPlayerName,
+              fontBackNumber: req.body.fontBackNumber,
               cloth: req.body.cloth,
               motive: req.body.motive,
               players: req.body.players,
