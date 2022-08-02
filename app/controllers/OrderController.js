@@ -39,6 +39,7 @@ class OrderController {
           .then(async function (response) {
             imgbbResp = response.data.data.display_url;
             const order = new Order({
+              idClient: req.body.idClient,
               orderEmail: req.body.orderEmail,
               orderName: req.body.orderName,
               orderPhone: req.body.orderPhone,
