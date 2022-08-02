@@ -47,7 +47,7 @@ class OrderController {
               fontBackNumber: req.body.fontBackNumber,
               cloth: req.body.cloth,
               motive: req.body.motive,
-              players: req.body.players,
+              players: JSON.parse(req.body.players),
               sample: imgbbResp,
             });
             console.log(req.body.players);
