@@ -74,19 +74,23 @@ class OrderController {
     });
   }
   async getAllOrder(req, res) {
-    let status;
-    let message;
-    let dtOrder = await Order.find();
+    try {
+      let status;
+      let message;
+      let dtOrder = await Order.find();
 
-    if (dtOrder) {
-      status = 200;
-      message = "Get All Oder Success";
-    } else {
-      status = 404;
-      message = "Order is Empty";
+      if (dtOrder) {
+        status = 200;
+        message = "Get All Oder Success";
+      } else {
+        status = 404;
+        message = "Order is Empty";
+      }
+
+      return res.status(status).json({ message: message, data: dtOrder });
+    } catch (err) {
+      return res.status(500).json({ err });
     }
-
-    return res.status(status).json({ message: message, data: dtOrder });
   }
 }
 
