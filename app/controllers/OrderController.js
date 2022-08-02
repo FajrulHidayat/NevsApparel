@@ -50,6 +50,7 @@ class OrderController {
               motive: req.body.motive,
               players: JSON.parse(req.body.players),
               sample: imgbbResp,
+              payStatus: "Belum Terbayar",
             });
             console.log(req.body.players);
             console.log(order);
@@ -92,6 +93,55 @@ class OrderController {
     } catch (err) {
       return res.status(500).json({ err });
     }
+  }
+  async getAllOrderByIdClient(req, res) {
+    let status;
+    let message;
+    let idClient = req.params.idClient;
+    let dtOrder = await Order.find({ idClient: idClient }).exec();
+
+    if (dtOrder) {
+      status = 200;
+      message = "Get Motif Success";
+    } else {
+      status = 404;
+      message = "Motif not found";
+    }
+    return res.status(status).json({ message: message, data: dtOrder });
+  }
+  async getAllOrderByIdOrder(req, res) {
+    let status;
+    let message;
+    let idOrder = req.params.idOrder;
+    let dtOrder = await Order.findById(idOrder).exec();
+
+    if (dtOrder) {
+      status = 200;
+      message = "Get Motif Success";
+    } else {
+      status = 404;
+      message = "Motif not found";
+    }
+    return res.status(status).json({ message: message, data: dtOrder });
+  }
+  async updateStauts(req, res) {
+    let status;
+    let message;
+    let idOrder = req.params.idOrder;
+    let payStatus = req.body.payStatus;
+    let dtOrder = await Order.updateOne(
+      { _id: idOrder },
+      { payStatus: payStatus }
+    );
+
+    if (dtOrder) {
+      status = 200;
+      message = "Get Motif Success";
+    } else {
+      status = 404;
+      message = "Motif not found";
+    }
+    return res.status(status).json({ message: message, data: dtOrder });
   }
 }
 

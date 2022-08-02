@@ -40,6 +40,9 @@ const OrderSchema = mongoose.Schema({
   sample: {
     type: String,
   },
+  payStatus: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
