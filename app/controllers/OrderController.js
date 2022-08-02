@@ -50,6 +50,7 @@ class OrderController {
               players: req.body.players,
               sample: imgbbResp,
             });
+            console.log(req.body.players);
             console.log(order);
             dtOrder = order.save();
             if (dtOrder) {
