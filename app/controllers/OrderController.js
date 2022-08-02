@@ -48,7 +48,9 @@ class OrderController {
               cloth: req.body.cloth,
               motive: req.body.motive,
               players: req.body.players,
+              sample: imgbbResp,
             });
+            console.log(order);
             dtOrder = order.save();
             if (dtOrder) {
               status = 200;
