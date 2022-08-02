@@ -76,7 +76,7 @@ class OrderController {
   async getAllOrder(req, res) {
     let status;
     let message;
-    let dtOrder = Order.find();
+    let dtOrder = await Order.find();
 
     if (dtOrder) {
       status = 200;
