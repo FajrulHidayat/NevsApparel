@@ -52,7 +52,7 @@ class OrderController {
               sample: imgbbResp,
               payStatus: "Belum Terbayar",
               process: "Pending",
-              paymentReceipt: "-",
+              paymentReceipt: "",
             });
             console.log(req.body.players);
             console.log(order);
