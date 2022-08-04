@@ -6,6 +6,8 @@ router.post("/", order.Order);
 router.get("/AllOrder", order.getAllOrder);
 router.get("/AllOrderByClient/:idClient", order.getAllOrderByIdClient);
 router.get("/AllOrderByIdOrder/:idOrder", order.getAllOrderByIdOrder);
-router.put("/updateStatusPayment/:idOrder", order.updateStauts);
+router.put("/updateStatusPayment/:idOrder", order.updateStatus);
+router.put("/updateProcess/:idOrder", order.updateProcess);
+router.put("/updatePaymentReceipt/:idOrder", order.UpdatePaymentReceipt);
 
 module.exports = router;

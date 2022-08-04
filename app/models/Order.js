@@ -43,6 +43,8 @@ const OrderSchema = mongoose.Schema({
   payStatus: {
     type: String,
   },
+  process: { type: String },
+  paymentReceipt: { type: String },
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
