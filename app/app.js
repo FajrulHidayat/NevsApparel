@@ -13,6 +13,7 @@ app.use(
 const userRouter = require("../routes/auth");
 const motifRouter = require("../routes/motif");
 const orderRouter = require("../routes/order");
+const checkoutRouter = require("../routes/checkout");
 
 app.get("/", (req, res) =>
   res.send({
@@ -32,5 +33,6 @@ app.use("/image", express.static("public/image"));
 app.use("/auth", userRouter);
 app.use("/motif", motifRouter);
 app.use("/order", orderRouter);
+app.use("/checkout", checkoutRouter);
 
 module.exports = app;
