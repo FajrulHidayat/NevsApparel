@@ -45,6 +45,7 @@ const OrderSchema = mongoose.Schema({
   },
   process: { type: String },
   paymentReceipt: { type: String },
+  price: { type: Number },
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

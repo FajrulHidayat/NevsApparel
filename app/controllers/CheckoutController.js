@@ -17,6 +17,7 @@ class OrderController {
       idOrder: req.body.idOrder,
       payStatus: "Belum Terbayar",
       paymentReceipt: "",
+      price: req.body.price,
     });
     console.log(checkout);
     dtCheckout = checkout.save();
@@ -174,7 +175,7 @@ class OrderController {
       } else if (err) {
         return res.status(200).json(err);
       }
-      console.log(req.file);
+      // console.log(req.file);
 
       try {
         // if (!validation.success) return res.status(400).json(validation);

@@ -5,10 +5,10 @@ const MotifSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  urlDesign:{
-    type:String,
+  urlDesign: {
+    type: String,
   },
-  
+  price: { type: Number },
 });
 
 module.exports = mongoose.model("Motif", MotifSchema);

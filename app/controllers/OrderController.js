@@ -53,6 +53,7 @@ class OrderController {
               payStatus: "Belum Terbayar",
               process: "Pending",
               paymentReceipt: "",
+              price: req.body.price,
             });
             console.log(req.body.players);
             console.log(order);

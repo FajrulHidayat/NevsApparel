@@ -10,6 +10,7 @@ const CheckoutSchema = mongoose.Schema({
     type: String,
   },
   paymentReceipt: { type: String },
+  price: { type: Number },
 });
 
 module.exports = mongoose.model("Checkout", CheckoutSchema);

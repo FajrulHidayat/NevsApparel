@@ -104,6 +104,22 @@ class MotifController {
     }
     return res.status(status).json({ message: message, dtMotif });
   }
+  async updatePrice(req, res) {
+    let status;
+    let message;
+    let idOrder = req.params.idOrder;
+    let payStatus = req.body.payStatus;
+    let dtMotif = await Motif.updateMany({}, { price: 50000 });
+
+    if (dtMotif) {
+      status = 200;
+      message = "Update Status Motif Success";
+    } else {
+      status = 404;
+      message = "Update Status Motif not found";
+    }
+    return res.status(status).json({ message: message, data: dtMotif });
+  }
   async DeleteAllMotif(req, res) {
     let status;
     let message;
