@@ -49,7 +49,10 @@ class OrderController {
           dtCheckoutTemp.push(temp);
           console.log(index);
           console.log(dtCheckoutTemp);
-          if (dtCheckout.length == index + 1) {
+          if (
+            dtCheckout.length == index + 1 &&
+            dtCheckout.length == dtCheckoutTemp.length
+          ) {
             console.log("dtCheckout", dtCheckout.length);
             console.log("index", index);
             console.log("dtCheckoutTemp", dtCheckoutTemp.length);
