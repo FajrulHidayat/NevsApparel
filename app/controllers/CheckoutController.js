@@ -47,7 +47,12 @@ class OrderController {
           temp = element._doc;
           temp = { ...temp, detailOrder };
           dtCheckoutTemp.push(temp);
+          console.log(index);
+          console.log(dtCheckoutTemp);
           if (dtCheckout.length == index + 1) {
+            console.log("dtCheckout", dtCheckout.length);
+            console.log("index", index);
+            console.log("dtCheckoutTemp", dtCheckoutTemp.length);
             return res
               .status(status)
               .json({ message: message, data: dtCheckoutTemp });
