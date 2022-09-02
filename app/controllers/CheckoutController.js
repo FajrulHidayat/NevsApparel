@@ -31,12 +31,15 @@ class OrderController {
     return res.status(status).json({ message: message, data: dtCheckout });
   }
   async getAllCheckout(req, res) {
+    // console.log("get all checkout");
     try {
       let status;
       let message;
       let dtCheckout = await Checkout.find();
       let dtCheckoutTemp = [];
+      // console.log("get all checkout");
       if (dtCheckout) {
+        // console.log("get all checkout");
         await dtCheckout.forEach(async (element, index) => {
           let detailOrder = [];
           let temp;
@@ -63,12 +66,11 @@ class OrderController {
         });
         status = 200;
         message = "Get All Checkout Success";
+        return res.status(status).json({ message: message, data: dtCheckout });
       } else {
         status = 404;
         message = "Checkout is Empty";
-        return res
-          .status(status)
-          .json({ message: message, data: dtCheckoutTemp });
+        return res.status(status).json({ message: message, data: dtCheckout });
       }
     } catch (err) {
       return res.status(500).json({ err });
