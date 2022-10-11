@@ -18,6 +18,7 @@ class OrderController {
       payStatus: "Belum Terbayar",
       paymentReceipt: "",
       price: req.body.price,
+      createAt: new Date(),
     });
     console.log(checkout);
     dtCheckout = checkout.save();
@@ -33,6 +34,7 @@ class OrderController {
   async getAllCheckout(req, res) {
     // console.log("get all checkout");
     try {
+      console.log(new Date());
       let status;
       let message;
       let dtCheckout = await Checkout.find();
@@ -50,15 +52,15 @@ class OrderController {
           temp = element._doc;
           temp = { ...temp, detailOrder };
           dtCheckoutTemp.push(temp);
-          console.log(index);
-          console.log(dtCheckoutTemp);
+          // console.log(index);
+          // console.log(dtCheckoutTemp);
           if (
             dtCheckout.length == index + 1 &&
             dtCheckout.length == dtCheckoutTemp.length
           ) {
-            console.log("dtCheckout", dtCheckout.length);
-            console.log("index", index);
-            console.log("dtCheckoutTemp", dtCheckoutTemp.length);
+            // console.log("dtCheckout", dtCheckout.length);
+            // console.log("index", index);
+            // console.log("dtCheckoutTemp", dtCheckoutTemp.length);
             return res
               .status(status)
               .json({ message: message, data: dtCheckoutTemp });

@@ -11,6 +11,7 @@ const CheckoutSchema = mongoose.Schema({
   },
   paymentReceipt: { type: String },
   price: { type: Number },
+  createAt: { type: String },
 });
 
 module.exports = mongoose.model("Checkout", CheckoutSchema);
