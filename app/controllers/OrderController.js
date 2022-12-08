@@ -34,7 +34,7 @@ class OrderController {
         );
         axios
           .post(
-            `https://api.imgbb.com/1/upload?key=4c40d02b3fab3d334e1c22deb47fbd91&image=https://nevsbe.herokuapp.com/image/${foto}`
+            `https://api.imgbb.com/1/upload?key=4c40d02b3fab3d334e1c22deb47fbd91&image=http://191.101.80.87:9000/image/${foto}`
           )
           .then(async function (response) {
             imgbbResp = response.data.data.display_url;
@@ -190,7 +190,7 @@ class OrderController {
         );
         axios
           .post(
-            `https://api.imgbb.com/1/upload?key=4c40d02b3fab3d334e1c22deb47fbd91&image=https://nevsbe.herokuapp.com/image/${foto}`
+            `https://api.imgbb.com/1/upload?key=4c40d02b3fab3d334e1c22deb47fbd91&image=http://191.101.80.87:9000/image/${foto}`
           )
           .then(async function (response) {
             imgbbResp = response.data.data.display_url;
