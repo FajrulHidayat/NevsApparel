@@ -1,0 +1,7 @@
+{
+    "apps" : [{
+        "name" : "skripsi Ismi",
+        "script" : "./bin/www",
+        "watch" : "true"
+    }]
+}
