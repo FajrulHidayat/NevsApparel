@@ -234,6 +234,22 @@ class OrderController {
       }
     });
   }
+  async DeleteAllCheckout(req, res) {
+    let status;
+    let message;
+    console.log("delete");
+    // let idDesign = req.params.idDesign;
+    let dtOrder = await Checkout.deleteMany();
+
+    if (dtOrder) {
+      status = 200;
+      message = "Delete All Order Success";
+    } else {
+      status = 404;
+      message = "Delete All Order Failed";
+    }
+    return res.status(status).json({ message: message, dtOrder });
+  }
 }
 
 const orderController = new OrderController();

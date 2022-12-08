@@ -9,5 +9,6 @@ router.get("/AllOrderByIdOrder/:idOrder", order.getAllOrderByIdOrder);
 router.put("/updateStatusPayment/:idOrder", order.updateStatus);
 router.put("/updateProcess/:idOrder", order.updateProcess);
 router.put("/updatePaymentReceipt/:idOrder", order.UpdatePaymentReceipt);
+router.delete("/", order.DeleteAllOrder);
 
 module.exports = router;

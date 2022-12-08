@@ -8,5 +8,6 @@ router.get("/AllCheckoutByClient/:idClient", checkout.getAllCheckoutByIdClient);
 router.get("/AllCheckoutByIdCheckout/:id", checkout.getAllCheckoutByIdCheckout);
 router.put("/updateStatusPayment/:id", checkout.updateStatus);
 router.put("/updatePaymentReceipt/:id", checkout.UpdatePaymentReceipt);
+router.delete("/", checkout.DeleteAllCheckout);
 
 module.exports = router;
