@@ -47,6 +47,7 @@ class UserController {
           name: dtUser.name,
           email: dtUser.email,
           level: dtUser.level,
+          phone: dtUser.phone,
         };
       }
     }
